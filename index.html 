@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AI Chatbot</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f5f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .chatbox {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #messages {
+      min-height: 350px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+    }
+
+    input {
+      width: 72%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="chatbox">
+    <h1>🤖 My AI Chatbot</h1>
+
+    <div id="messages">
+      <p><b>AI:</b> Hello! Ask me anything. 😊</p>
+    </div>
+
+    <input id="userInput" type="text" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const messages = document.getElementById("messages");
+
+      if (input.value.trim() === "") return;
+
+      messages.innerHTML +=
+        "<p><b>You:</b> " + input.value + "</p>";
+
+      messages.innerHTML +=
+        "<p><b>AI:</b> Your message has been received! 🤖</p>";
+
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
